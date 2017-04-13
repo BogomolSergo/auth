@@ -1,0 +1,21 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+body {
+  background-image: image_url('spring.jpg');
+  }
+
+
+<div class="col-xs-6 col-sm-3"></div>
+<div class="col-xs-6 col-sm-3"></div>
+<div class="col-xs-6 col-sm-3">
+<div id="user_nav">
+<% if current_user %>
+<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><%= current_user.email %></a></p>
+<li role="presentation" class="enable"><%= link_to "Log out", log_out_path %></li>
+<% else %>
+<ul class="nav nav-pills">
+<li role="presentation" class="enable"><%= link_to "Sign up", sign_up_path %> </li>
+<li role="presentation" class="enable"><%= link_to "log in", log_in_path %></li>
+</ul>
+<% end %>
+</div>
